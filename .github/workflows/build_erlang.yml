@@ -22,7 +22,6 @@ jobs:
           brew install kerl
       - name: Install Erlang 24.3.4
         run: | 
-          kerl update releases
           mkdir ./output
           kerl install 24.3.4 ./output
       - name: Upload build

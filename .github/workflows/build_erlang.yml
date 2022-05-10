@@ -19,7 +19,8 @@ jobs:
       - name: Install kerl
         run: brew update && brew install kerl
       - name: Build latest Erlang
-        run: kerl install 24.3.4 ./output
+        run: kerl update releases 
+             kerl install 24.3.4 ./output
       - name: Upload build
         uses: actions/upload-artifact@v3
         with:

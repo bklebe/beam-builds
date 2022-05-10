@@ -18,8 +18,12 @@ jobs:
     steps:
       - name: Install kerl
         run: |
+          echo "::group::brew update"
           brew update
+          echo "::endgroup::"
+          echo "::group::brew install kerl"
           brew install kerl
+          echo "::endgroup::"
       - name: Install Erlang 24.3.4
         run: | 
           mkdir ./output

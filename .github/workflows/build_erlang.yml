@@ -34,10 +34,11 @@ jobs:
           kerl build 24.3.4 24.3.4
           echo "::endgroup::"
           echo "::group::kerl install 24.3.4 ./output"
-          kerl install 24.3.4 ./output
+          kerl install 24.3.4 ./erlang-24.3.4
           echo "::endgroup::"
+          kerl deploy ./erlang-24.3.4
       - name: Upload build
         uses: actions/upload-artifact@v3
         with:
           name: erlang-24.3.4
-          path: ./output
+          path: ./erlang-24.3.4

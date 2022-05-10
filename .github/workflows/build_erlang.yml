@@ -17,11 +17,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Install kerl
-        run: brew update && brew install kerl
-      - name: Update kerl
-        run: kerl update releases
+        run: |
+          brew update
+          brew install kerl
       - name: Install Erlang 24.3.4
-        run: kerl install 24.3.4 ./output
+        run: | 
+          kerl update releases
+          kerl install 24.3.4 ./output
       - name: Upload build
         uses: actions/upload-artifact@v3
         with:
